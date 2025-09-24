@@ -7,7 +7,6 @@ I’ll be solving problems, learning concepts, and tracking my progress.
 ## 📚 Topics to Cover
 - Time & Space Complexity
 - Arrays
-- Strings
 - Linked Lists
 - Stacks & Queues
 - Recursion
