@@ -19,14 +19,13 @@ I’ll be solving problems, learning concepts, and tracking my progress.
 ---
 
 ## 🛠️ Tech Stack
-- Language: **Python / Dart (choose one or more you use)**
+- Language: **Dart (choose one or more you use)**
 - Platform: **LeetCode**
 
 ---
 
 ## 🎯 Goals
 - Build a strong foundation in **DSA**
-- Solve at least **X problems** in 100 days
 - Be consistent & document everything
 
 ---
