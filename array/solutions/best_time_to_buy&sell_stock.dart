@@ -1,4 +1,6 @@
 // 2. [Best Time to Buy and Sell Stock] find maximum profite
+// import 'dart:math';
+
 import 'dart:math';
 
 List<int> prices = [7, 1, 5, 3, 6, 4];
@@ -16,3 +18,4 @@ void main() {
   }
   print(profit);
 }
+
