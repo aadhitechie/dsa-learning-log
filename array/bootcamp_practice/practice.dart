@@ -70,3 +70,52 @@ void main(){
   }
 print(s);
 }
+
+//no.4 leetcode
+class Solution {
+  double findMedianSortedArrays(List<int> nums1, List<int> nums2) {
+    List<int> A = nums1;
+    List<int> B = nums2;
+    int m = A.length;
+    int n = B.length;
+
+    // Ensure A is the smaller array
+    if (m > n) {
+      List<int> temp = A;
+      A = B;
+      B = temp;
+      m = A.length;
+      n = B.length;
+    }
+
+    int low = 0, high = m;
+
+    while (low <= high) {
+      int i = (low + high) ~/ 2;
+      int j = ((m + n + 1) ~/ 2) - i;
+
+      double Aleft = (i > 0) ? A[i - 1].toDouble() : double.negativeInfinity;
+      double Aright = (i < m) ? A[i].toDouble() : double.infinity;
+      double Bleft = (j > 0) ? B[j - 1].toDouble() : double.negativeInfinity;
+      double Bright = (j < n) ? B[j].toDouble() : double.infinity;
+
+      if (Aleft <= Bright && Bleft <= Aright) {
+        // Found the correct partition
+        if ((m + n) % 2 == 0) {
+          return ((Aleft > Bleft ? Aleft : Bleft) +
+                  (Aright < Bright ? Aright : Bright)) /
+              2.0;
+        } else {
+          return (Aleft > Bleft ? Aleft : Bleft);
+        }
+      } else if (Aleft > Bright) {
+        high = i - 1;
+      } else {
+        low = i + 1;
+      }
+    }
+
+    throw Exception("Input arrays not sorted or invalid");
+  }
+}
+
